@@ -14,3 +14,8 @@ sentimentAnalyzer(word_vec, details)
 \description{
 This function will help you extract the weight of emotions conveyed in a tweet
 }
+\examples{
+
+sentimentAnalyzer(doge$text, details = T)
+
+}

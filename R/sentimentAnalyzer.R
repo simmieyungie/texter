@@ -10,15 +10,15 @@
 #'
 #' @export
 #'
-#' @example
+#' @examples
 #'
 #' sentimentAnalyzer(doge$text, details = T)
 #'
 #' @importFrom dplyr rename mutate distinct count anti_join top_n inner_join row_number group_by ungroup slice
-#' @importFrom tidytext unnest_tokens stop_words
+#' @importFrom tidytext unnest_tokens
 #' @importFrom textdata lexicon_nrc lexicon_bing
 #' @importFrom magrittr %>%
-
+#' @importFrom stopwords stopwords
 
 sentimentAnalyzer <- function(word_vec, details){
   tabinfo <-  word_vec %>%
@@ -29,7 +29,9 @@ sentimentAnalyzer <- function(word_vec, details){
     mutate(text = removeNumPunct(text)) %>%
     # mutate(text = str_remove_all(text, paste(remove_these, collapse = "|"))) %>%
     unnest_tokens(word, text) %>%
-    anti_join(stop_words)
+    anti_join(stopwords::stopwords() %>%
+                as.data.frame() %>%
+                rename(word = "."))
 
   if (details == F){
     tabinfo %>%
@@ -51,3 +53,6 @@ sentimentAnalyzer <- function(word_vec, details){
   }
 
 }
+
+
+

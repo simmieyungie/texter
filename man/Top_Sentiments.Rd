@@ -15,3 +15,7 @@ Top_Sentiments(word_vec, plot)
 This function returns the top 10 positive and negative words expressed in a text.
 By defaults a data frame of words classified as positve or negative based on weights.
 }
+\examples{
+Top_Sentiments(doge$text, plot = T)
+
+}

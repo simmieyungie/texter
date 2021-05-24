@@ -22,10 +22,10 @@
 #' }
 #'
 #' @importFrom dplyr rename mutate count anti_join top_n
-#' @importFrom tidytext unnest_tokens stop_words
+#' @importFrom tidytext unnest_tokens
 #' @importFrom stringr str_remove_all
 #' @importFrom magrittr %>%
-#'
+#' @importFrom stopwords stopwords
 #'
 
 #Version three of code
@@ -45,7 +45,9 @@ top_words <- function(word_vec, remove_these, size){
       mutate(text = removeNumPunct(text)) %>%
       # mutate(text = str_remove_all(text, paste(remove_these, collapse = "|"))) %>%
       unnest_tokens(word, text) %>%
-      anti_join(tidytext::stop_words) %>%
+      anti_join(stopwords::stopwords() %>%
+                  as.data.frame() %>%
+                  rename(word = ".")) %>%
       count(word, sort = T)
   } else {
     word_counts <-  word_vec %>%
@@ -56,7 +58,9 @@ top_words <- function(word_vec, remove_these, size){
       mutate(text = removeNumPunct(text)) %>%
       mutate(text = str_remove_all(text, paste(remove_these, collapse = "|"))) %>%
       unnest_tokens(word, text) %>%
-      anti_join(tidytext::stop_words) %>%
+      anti_join(stopwords::stopwords() %>%
+                  as.data.frame() %>%
+                  rename(word = ".")) %>%
       count(word, sort = T)
   }
 

@@ -11,14 +11,15 @@
 #'
 #' @export
 #'
-#' @example
-#' Top_Sentiments(doge$text, plot = T) #Will return a plot
+#' @examples
+#' Top_Sentiments(doge$text, plot = T)
 #'
 #' @importFrom dplyr rename mutate count anti_join top_n inner_join row_number group_by ungroup slice
-#' @importFrom tidytext unnest_tokens stop_words get_sentiments
+#' @importFrom tidytext unnest_tokens get_sentiments
 #' @importFrom stringr str_remove_all
 #' @importFrom magrittr %>%
 #' @importFrom ggplot2 geom_col labs facet_wrap
+#' @importFrom stopwords stopwords
 
 
 Top_Sentiments <- function(word_vec, plot){
@@ -33,7 +34,9 @@ Top_Sentiments <- function(word_vec, plot){
       mutate(text = removeNumPunct(text)) %>%
       # mutate(text = str_remove_all(text, paste(remove_these, collapse = "|"))) %>%
       unnest_tokens(word, text) %>%
-      anti_join(stop_words) %>%
+      anti_join(stopwords::stopwords() %>%
+                  as.data.frame() %>%
+                  rename(word = ".")) %>%
       inner_join(get_sentiments("bing")) %>%
       group_by(word, sentiment) %>%
       count() %>%
@@ -57,7 +60,9 @@ Top_Sentiments <- function(word_vec, plot){
       mutate(text = removeNumPunct(text)) %>%
       # mutate(text = str_remove_all(text, paste(remove_these, collapse = "|"))) %>%
       unnest_tokens(word, text) %>%
-      anti_join(stop_words) %>%
+      anti_join(stopwords::stopwords() %>%
+                  as.data.frame() %>%
+                  rename(word = ".")) %>%
       inner_join(get_sentiments("bing")) %>%
       group_by(word, sentiment) %>%
       count() %>%
