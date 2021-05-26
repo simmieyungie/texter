@@ -43,7 +43,7 @@ top_Sentiments <- function(word_vec, plot){
       count() %>%
       ungroup() %>%
       group_by(sentiment) %>%
-      top_n(10) %>%
+      slice(1:10) %>%
       mutate(word = reorder(word, n)) %>%
       ggplot(aes(n, word, fill = sentiment)) +
       geom_col(show.legend = FALSE) +
