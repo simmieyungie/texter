@@ -1,0 +1,94 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# texter
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+The goal of texter is to help simplify text analysis for data professionals who need quick insights into their text data.
+
+## Installation
+This package is in its testing phasing and as not been submitted to CRAN.
+<!-- You can install the released version of texter from [CRAN](https://CRAN.R-project.org) with: -->
+
+<!-- ``` r -->
+<!-- install.packages("texter") -->
+<!-- ``` -->
+
+The development version from [GitHub](https://github.com/) can be installed with:
+
+```
+# install.packages("devtools")
+#devtools::install_github("simmieyungie/texter")
+remotes::install_github("simmieyungie/texter@main")
+#remove.packages(texter)
+```
+## Example
+
+This is a basic example which shows you how to solve a common problem:
+
+```{r example}
+library(texter)
+## basic example code
+```
+
+### Users
+This will help you extract all the handles tagged in a tweet.
+
+```{r cars}
+
+head(unlist(users(doge$text)),5)
+```
+
+### Sentiment Analyzer
+The emotions conveyed tweets using sentiment analysis. You have an option to specify **details = TRUE (or FALSE)**. TRUE will return a more robust distribution of sentiments and not just **Positive or Negative**.
+
+```{r sentimentAnalyzer}
+sentimentAnalyzer(doge$text, details = T)
+```
+Specifying details = F
+
+```{r}
+sentimentAnalyzer(doge$text, details = F)
+```
+
+### top_words
+Extract the top n words occurring in a text
+
+```{r}
+
+top_words(word_vec = brexit$content, remove_these = c("london", "since"),
+          size = 10)
+```
+
+### Counter
+Retrieve the frequency of a word from a text.
+
+```{r}
+counter(word_vec = brexit$content, words = c("brexit", "london"))
+```
+
+
+### top_sentiments
+Retrieve the top 10 positive and negative words. Specify plot = TRUE and a simple bar chart of the words will be created, otherwise you get a dataframe of results.
+
+```{r}
+top_Sentiments(word_vec = brexit$content, plot = F)
+```
+```{r}
+top_Sentiments(word_vec = doge$text, plot = T) #You can further customize your plot
+```
+
