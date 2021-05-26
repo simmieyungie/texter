@@ -1,7 +1,7 @@
 # URL Remover
 
 #' A function to help you remove URLs from text
-#' @description  This function helps remove URLs from text
+#' @description  This function helps remove URLs from text, particularly designed for tweets
 #'
 #' @export
 #'
