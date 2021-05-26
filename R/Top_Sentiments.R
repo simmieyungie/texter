@@ -15,11 +15,11 @@
 #' @examples
 #' Top_Sentiments(doge$text, plot = T)
 #'
-#' @importFrom dplyr rename mutate count anti_join top_n inner_join row_number group_by ungroup slice
+#' @importFrom dplyr rename mutate slice filter count anti_join top_n inner_join row_number group_by ungroup slice
 #' @importFrom tidytext unnest_tokens get_sentiments
 #' @importFrom stringr str_remove_all
 #' @importFrom magrittr %>%
-#' @importFrom ggplot2 geom_col labs facet_wrap
+#' @importFrom ggplot2 geom_col labs facet_wrap ggplot aes
 #' @importFrom stopwords stopwords
 
 

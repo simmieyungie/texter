@@ -14,7 +14,7 @@
 #'
 #' sentimentAnalyzer(doge$text, details = T)
 #'
-#' @importFrom dplyr rename mutate distinct count anti_join top_n inner_join row_number group_by ungroup slice
+#' @importFrom dplyr rename mutate slice distinct count anti_join top_n inner_join row_number group_by ungroup slice
 #' @importFrom tidytext unnest_tokens
 #' @importFrom textdata lexicon_nrc lexicon_bing
 #' @importFrom magrittr %>%

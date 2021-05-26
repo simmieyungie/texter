@@ -72,7 +72,8 @@ top_words_Retriever <- function(word_vec, word_ret, remove_these, size){
           anti_join(stopwords::stopwords() %>%
                       as.data.frame() %>%
                       rename(word = ".")) %>%
-          count(word, sort = T)
+          count(word, sort = T) %>%
+          filter(!word %in% remove_these)
       }))
     }
 
