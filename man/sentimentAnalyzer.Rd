@@ -2,7 +2,7 @@
 % Please edit documentation in R/sentimentAnalyzer.R
 \name{sentimentAnalyzer}
 \alias{sentimentAnalyzer}
-\title{Get the overall weight of emotions conveyed in a tweet}
+\title{Get the overall weight of emotions conveyed in a corpus}
 \usage{
 sentimentAnalyzer(word_vec, details)
 }

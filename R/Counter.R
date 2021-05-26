@@ -2,13 +2,13 @@
 
 #' Get the number of times a vector of words occurs
 #'
-#' @description This function retrieves the number of times each word in a vector occurs.
+#' @description This function retrieves the number of times each word in a corpus occurs.
 #' It returns a dataframe containing the word and the corresponding counts
 #'
 #'
-#' @param word_vec is the text column
+#' @param word_vec This is the corpus you want to the word frequency extracted from
 #'
-#' @param words this is a vector of words you want to retrieve their frequency counts
+#' @param words This is a vector of words you want to retrieve their frequency counts
 #'
 #'
 #'
@@ -26,11 +26,12 @@ counter <- function(word_vec, words){
         as.data.frame() %>%
         rename(text = ".") %>%
         mutate(text = tolower(text)) %>%
-        mutate(text = removeURL2(text)) %>%
+        mutate(text = removeURL(text)) %>%
         mutate(text = removeNumPunct(text)) %>%
         mutate(word_occur =stringr::str_count(text, x)) %>%
         summarise(n = sum(word_occur )) %>%
-        mutate(key = x)
+        mutate(key = x) %>%
+        select(key, n)
     }))
 
   }

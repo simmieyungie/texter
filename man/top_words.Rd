@@ -7,19 +7,19 @@
 top_words(word_vec, remove_these, size)
 }
 \arguments{
-\item{word_vec}{is the variable containing text to be analyzed}
+\item{word_vec}{This is the corpus you want to extract the sentiments from}
 
-\item{remove_these}{is a vector of characters you want cleaned out of the tex}
+\item{remove_these}{This is a vector of characters you want cleaned out of the text}
 
-\item{size}{is the N number of rows to be retrieved as an integer value}
+\item{size}{This is the Top N number of rows to be retrieved as an integer value}
 }
 \description{
-This function is used to get the top N words from a vactor of text. It will retrieve the most occuring words based on frequency
+This function is used to get the top N words from a corpus. It will retrieve the most occurring words based on frequency
 }
 \examples{
 
 {
-top_words(df$content, remove_these = c("news","uk"), size = 10)
+top_words(brexit$content, remove_these = c("news","uk"), size = 10)
 }
 
 }

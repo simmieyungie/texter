@@ -6,7 +6,7 @@
 #' containing a key word. It is particularly useful when you want to search the top n words revolving
 #' around a certain keyword
 #'
-#' @param word_vec is the variable containing text to be analyzed
+#' @param word_vec This is the corpus you want to extract the sentiments from
 #'
 #' @param word_ret is the key word you want searched
 #'
@@ -45,7 +45,7 @@ top_words_Retriever <- function(word_vec, word_ret, remove_these, size){
           mutate(exist = grepl(word_ret, text, ignore.case = T)) %>%
           filter(exist == TRUE) %>%
           select(-exist) %>%
-          mutate(text = removeURL2(text)) %>%
+          mutate(text = removeURL(text)) %>%
           mutate(text = removeNumPunct(text)) %>%
           # mutate(text = str_remove_all(text, paste(remove_these, collapse = "|"))) %>%
           unnest_tokens(word, text) %>%
@@ -65,7 +65,7 @@ top_words_Retriever <- function(word_vec, word_ret, remove_these, size){
           mutate(exist = grepl(word_ret, text, ignore.case = T)) %>%
           filter(exist == TRUE) %>%
           select(-exist) %>%
-          mutate(text = removeURL2(text)) %>%
+          mutate(text = removeURL(text)) %>%
           mutate(text = removeNumPunct(text)) %>%
           mutate(text = str_remove_all(text, paste(remove_these, collapse = "|"))) %>%
           unnest_tokens(word, text) %>%

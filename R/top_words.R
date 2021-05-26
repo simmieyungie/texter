@@ -3,13 +3,13 @@
 #' Get the top n words from vector of text
 #'
 #'
-#' @description This function is used to get the top N words from a vactor of text. It will retrieve the most occuring words based on frequency
+#' @description This function is used to get the top N words from a corpus. It will retrieve the most occurring words based on frequency
 #'
-#' @param word_vec is the variable containing text to be analyzed
+#' @param word_vec This is the corpus you want to extract the sentiments from
 #'
-#' @param remove_these is a vector of characters you want cleaned out of the tex
+#' @param remove_these This is a vector of characters you want cleaned out of the text
 #'
-#' @param size is the N number of rows to be retrieved as an integer value
+#' @param size This is the Top N number of rows to be retrieved as an integer value
 #'
 #'
 #'
@@ -18,7 +18,7 @@
 #' @examples
 #'
 #' {
-#' top_words(df$content, remove_these = c("news","uk"), size = 10)
+#' top_words(brexit$content, remove_these = c("news","uk"), size = 10)
 #' }
 #'
 #' @importFrom dplyr rename mutate count anti_join top_n
@@ -33,7 +33,7 @@ top_words <- function(word_vec, remove_these, size){
 
   #removeNumPunct <- function(x) gsub("[^[:alpha:][:space:]]*", "", x)
 
-  #removeURL2 <- function(x) gsub("([[:alpha:]])(?=\\1)", "", x, perl = TRUE)
+  #removeUR <- function(x) gsub("([[:alpha:]])(?=\\1)", "", x, perl = TRUE)
 
 
   if (missing(remove_these)){ #You could also use missing() to test whether or not the argument y was supplied:
@@ -41,7 +41,7 @@ top_words <- function(word_vec, remove_these, size){
       as.data.frame() %>%
       rename(text = ".") %>%
       mutate(text = tolower(text)) %>%
-      mutate(text = removeURL2(text)) %>%
+      mutate(text = removeURL(text)) %>%
       mutate(text = removeNumPunct(text)) %>%
       # mutate(text = str_remove_all(text, paste(remove_these, collapse = "|"))) %>%
       unnest_tokens(word, text) %>%
@@ -54,7 +54,7 @@ top_words <- function(word_vec, remove_these, size){
       as.data.frame() %>%
       rename(text = ".") %>%
       mutate(text = tolower(text)) %>%
-      mutate(text = removeURL2(text)) %>%
+      mutate(text = removeURL(text)) %>%
       mutate(text = removeNumPunct(text)) %>%
       mutate(text = str_remove_all(text, paste(remove_these, collapse = "|"))) %>%
       unnest_tokens(word, text) %>%

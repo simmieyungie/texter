@@ -7,7 +7,7 @@
 top_words_Retriever(word_vec, word_ret, remove_these, size)
 }
 \arguments{
-\item{word_vec}{is the variable containing text to be analyzed}
+\item{word_vec}{This is the corpus you want to extract the sentiments from}
 
 \item{word_ret}{is the key word you want searched}
 

@@ -4,7 +4,7 @@
 #'
 #' @description The function will any tagged handles from text
 #'
-#' @param x this is the text you intend to extract the handles tagged
+#' @param x This is the corpus you want to extract the mentions from
 #'
 #' @export
 #'

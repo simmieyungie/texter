@@ -7,11 +7,11 @@
 counter(word_vec, words)
 }
 \arguments{
-\item{word_vec}{is the text column}
+\item{word_vec}{This is the corpus you want to the word frequency extracted from}
 
-\item{words}{this is a vector of words you want to retrieve their frequency counts}
+\item{words}{This is a vector of words you want to retrieve their frequency counts}
 }
 \description{
-This function retrieves the number of times each word in a vector occurs.
+This function retrieves the number of times each word in a corpus occurs.
 It returns a dataframe containing the word and the corresponding counts
 }

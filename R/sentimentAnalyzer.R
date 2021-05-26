@@ -1,6 +1,6 @@
-# Get the overall weight of emotions conveyed in a tweet
+# Get the overall weight of emotions conveyed in a corpus
 
-#' Get the overall weight of emotions conveyed in a tweet
+#' Get the overall weight of emotions conveyed in a corpus
 #'
 #' @description This function will help you extract the weight of emotions conveyed in a tweet
 #'
@@ -25,7 +25,7 @@ sentimentAnalyzer <- function(word_vec, details){
     as.data.frame() %>%
     rename(text = ".") %>%
     mutate(text = tolower(text)) %>%
-    mutate(text = removeURL2(text)) %>%
+    mutate(text = removeURL(text)) %>%
     mutate(text = removeNumPunct(text)) %>%
     # mutate(text = str_remove_all(text, paste(remove_these, collapse = "|"))) %>%
     unnest_tokens(word, text) %>%

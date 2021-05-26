@@ -7,7 +7,7 @@
 users(x, ...)
 }
 \arguments{
-\item{x}{this is the text you intend to extract the handles tagged}
+\item{x}{This is the corpus you want to extract the mentions from}
 }
 \description{
 The function will any tagged handles from text

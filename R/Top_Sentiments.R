@@ -1,9 +1,10 @@
 # Get the top 10 negative and positive words expressed in a corpus
-#' Get the  top 10 negative and positive words
+
+#' Get the top 10 negative and positive words
 #'
 #'
 #' @description This function returns the top 10 positive and negative words expressed in a text.
-#' By defaults a data frame of words classified as positve or negative based on weights.
+#' By defaults a data frame of words classified as positive or negative based on weights.
 #'
 #' @param word_vec This is the corpus you want to extract the sentiments from
 #'
@@ -22,7 +23,7 @@
 #' @importFrom stopwords stopwords
 
 
-Top_Sentiments <- function(word_vec, plot){
+top_Sentiments <- function(word_vec, plot){
 
   if (plot == TRUE){
     word_vec%>%
@@ -30,7 +31,7 @@ Top_Sentiments <- function(word_vec, plot){
       mutate(linenum = row_number()) %>%
       rename(text = ".") %>%
       mutate(text = tolower(text)) %>%
-      mutate(text = removeURL2(text)) %>%
+      mutate(text = removeURL(text)) %>%
       mutate(text = removeNumPunct(text)) %>%
       # mutate(text = str_remove_all(text, paste(remove_these, collapse = "|"))) %>%
       unnest_tokens(word, text) %>%
@@ -56,7 +57,7 @@ Top_Sentiments <- function(word_vec, plot){
       mutate(linenum = row_number()) %>%
       rename(text = ".") %>%
       mutate(text = tolower(text)) %>%
-      mutate(text = removeURL2(text)) %>%
+      mutate(text = removeURL(text)) %>%
       mutate(text = removeNumPunct(text)) %>%
       # mutate(text = str_remove_all(text, paste(remove_these, collapse = "|"))) %>%
       unnest_tokens(word, text) %>%
