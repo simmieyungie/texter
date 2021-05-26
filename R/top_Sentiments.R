@@ -45,7 +45,7 @@ top_Sentiments <- function(word_vec, plot){
       group_by(sentiment) %>%
       slice(1:10) %>%
       mutate(word = reorder(word, n)) %>%
-      ggplot(aes(n, word, fill = sentiment)) +
+      ggplot2::ggplot(aes(n, word, fill = sentiment)) +
       geom_col(show.legend = FALSE) +
       facet_wrap(~sentiment, scales = "free_y") +
       labs(x = "Contribution to sentiment",
