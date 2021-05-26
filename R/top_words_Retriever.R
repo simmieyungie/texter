@@ -81,7 +81,8 @@ top_words_Retriever <- function(word_vec, word_ret, remove_these, size){
       word_counts
     } else {
       word_counts %>%
-        top_n(size)
+        arrange(desc(n)) %>%
+        slice(1:10)
     }
   }
 }

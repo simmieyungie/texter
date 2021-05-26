@@ -11,3 +11,5 @@
 #'
 #'
 removeURL <- function(x) gsub("([[:alpha:]])(?=\\1)", "", x, perl = TRUE)
+
+

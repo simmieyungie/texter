@@ -10,5 +10,5 @@ removeURL(x)
 \item{x}{is the text value you want to extract the texts from}
 }
 \description{
-This function helps remove URLs from text
+This function helps remove URLs from text, particularly designed for tweets
 }
