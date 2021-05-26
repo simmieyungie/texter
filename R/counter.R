@@ -31,7 +31,7 @@ counter <- function(word_vec, words){
         mutate(word_occur =stringr::str_count(text, x)) %>%
         summarise(n = sum(word_occur )) %>%
         mutate(key = x) %>%
-        select(key, n)
+        dplyr::select(key, n)
     }))
 
   }
