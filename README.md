@@ -23,7 +23,6 @@ The development version from [GitHub](https://github.com/) can be
 installed with:
 
     # install.packages("devtools")
-    #devtools::install_github("simmieyungie/texter")
     remotes::install_github("simmieyungie/texter@main")
     #remove.packages(texter)
 
