@@ -15,7 +15,7 @@
 #' @examples
 #' Top_Sentiments(doge$text, plot = T)
 #'
-#' @importFrom dplyr rename mutate slice filter count anti_join top_n inner_join row_number group_by ungroup slice
+#' @importFrom dplyr rename mutate slice filter slice_max count anti_join top_n inner_join row_number group_by ungroup slice
 #' @importFrom tidytext unnest_tokens get_sentiments
 #' @importFrom stringr str_remove_all
 #' @importFrom magrittr %>%
@@ -43,7 +43,7 @@ top_Sentiments <- function(word_vec, plot){
       count() %>%
       ungroup() %>%
       group_by(sentiment) %>%
-      slice(1:10) %>%
+      slice_max(order_by = n, n = 10) %>%
       mutate(word = reorder(word, n)) %>%
       ggplot2::ggplot(aes(n, word, fill = sentiment)) +
       geom_col(show.legend = FALSE) +
@@ -69,7 +69,7 @@ top_Sentiments <- function(word_vec, plot){
       count() %>%
       ungroup() %>%
       group_by(sentiment) %>%
-      slice(1:10)
+      slice_max(order_by = n, n = 10)
     TopSents
   }
 }
