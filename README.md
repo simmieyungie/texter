@@ -1,4 +1,3 @@
-
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
 # texter
@@ -23,6 +22,7 @@ The development version from [GitHub](https://github.com/) can be
 installed with:
 
     # install.packages("devtools")
+    #devtools::install_github("simmieyungie/texter")
     remotes::install_github("simmieyungie/texter@main")
     #remove.packages(texter)
 
@@ -41,8 +41,8 @@ This will help you extract all the handles tagged in a tweet.
 
 ``` r
 head(unlist(users(doge$text)),5)
-#> [1] "@ConanOBrien:"     "@AdrianoCollalti:" "@BitcoinBarry1"   
-#> [4] "@allyATL"          "@trust_in_andre"
+#> [1] "@ConanOBrien:"     "@AdrianoCollalti:" "@BitcoinBarry1"    "@allyATL"         
+#> [5] "@trust_in_andre"
 ```
 
 ### Sentiment Analyzer
@@ -60,10 +60,10 @@ sentimentAnalyzer(doge$text, details = T)
 #>   <chr>        <int>
 #> 1 anger           86
 #> 2 anticipation   205
-#> 3 disgust          5
+#> 3 disgust          4
 #> 4 fear            53
 #> 5 joy            190
-#> 6 negative        35
+#> 6 negative        34
 #> 7 positive       210
 #> 8 surprise         6
 #> 9 trust           31
@@ -74,6 +74,15 @@ Specifying details = F
 ``` r
 sentimentAnalyzer(doge$text, details = F)
 #> Joining, by = "word"
+#> Do you want to download:
+#>  Name: Bing Sentiment Lexicon 
+#>  URL: https://www.cs.uic.edu/~liub/FBS/sentiment-analysis.html 
+#>  License: May be used (research, commercial, etc) with attribution. 
+#>  Size: 287 KB (cleaned 220 KB) 
+#>  Download mechanism: http 
+#> 
+#> 1: Yes
+#> 2: No
 #> Joining, by = "word"
 #> # A tibble: 2 x 2
 #>   sentiment     n
@@ -82,7 +91,7 @@ sentimentAnalyzer(doge$text, details = F)
 #> 2 positive    348
 ```
 
-### top\_words
+### top_words
 
 Extract the top n words occurring in a text
 
@@ -115,7 +124,7 @@ counter(word_vec = brexit$content, words = c("brexit", "london"))
 #> 2 london 69
 ```
 
-### top\_sentiments
+### top_sentiments
 
 Retrieve the top 10 positive and negative words. Specify plot = TRUE and
 a simple bar chart of the words will be created, otherwise you get a
@@ -125,30 +134,21 @@ dataframe of results.
 top_Sentiments(word_vec = brexit$content, plot = F)
 #> Joining, by = "word"
 #> Joining, by = "word"
-#> # A tibble: 20 x 3
+#> # A tibble: 52 x 3
 #> # Groups:   sentiment [2]
-#>    word         sentiment     n
-#>    <chr>        <chr>     <int>
-#>  1 anger        negative      1
-#>  2 bleak        negative      1
-#>  3 burning      negative      2
-#>  4 casualty     negative      1
-#>  5 cold         negative      1
-#>  6 costlier     negative      1
-#>  7 crisis       negative      1
-#>  8 delays       negative      3
-#>  9 disapointing negative      1
-#> 10 disorder     negative      1
-#> 11 bolster      positive      1
-#> 12 bright       positive      1
-#> 13 concise      positive      1
-#> 14 confidence   positive      1
-#> 15 easing       positive      2
-#> 16 favour       positive      1
-#> 17 helped       positive      1
-#> 18 hot          positive      1
-#> 19 improve      positive      1
-#> 20 led          positive      1
+#>    word        sentiment     n
+#>    <chr>       <chr>     <int>
+#>  1 delays      negative      3
+#>  2 slow        negative      3
+#>  3 slump       negative      3
+#>  4 burning     negative      2
+#>  5 proprietary negative      2
+#>  6 protests    negative      2
+#>  7 anger       negative      1
+#>  8 bleak       negative      1
+#>  9 casualty    negative      1
+#> 10 cold        negative      1
+#> # ... with 42 more rows
 ```
 
 ``` r
@@ -157,4 +157,14 @@ top_Sentiments(word_vec = doge$text, plot = T) #You can further customize your p
 #> Joining, by = "word"
 ```
 
-<img src="man/figures/README-unnamed-chunk-6-1.png" width="100%" />
+<img src="/images/doge_top_sentiments.png" width="100%" />
+
+<!-- ### top_words_retriever -->
+<!-- Retrieve the top n words occurring in a rows of data containing a certain word -->
+<!-- ```{r} -->
+<!-- library(tidyverse) -->
+<!-- library(tidytext) -->
+<!-- brexit <- read.csv("C:\\Users\\User\\Documents\\Texter\\brexitnews.csv") -->
+<!-- top_words_Retriever(word_vec = brexit$content, word_ret = "bitcoin",  -->
+<!--                     remove_these = c("bitcoin", "rt"), size = 10) -->
+<!-- ``` -->
