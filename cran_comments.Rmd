@@ -1,5 +1,5 @@
 ---
-title: "cran-comments"
+title: "cran_comments"
 author: "Simi Adeboye"
 date: "8/15/2021"
 output: html_document
@@ -8,8 +8,9 @@ output: html_document
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
+
 ## R CMD check results
-0 errors | 2 warnings | 2 notes
+0 errors | 1 warnings | 1 notes
 
 #### checking package dependencies ... NOTE
 * Depends: includes the non-default packages:
@@ -18,6 +19,7 @@ knitr::opts_chunk$set(echo = TRUE)
 * Adding so many packages to the search path is excessive and importing
   selectively is preferable.
 
-#### checking top-level files ... NOTE
-* Non-standard file/directory found at top level:
-    'images'
+#### checking data for non-ASCII characters ... WARNING
+    Warning: found non-ASCII strings
+    
+    -- The contents have been converted from Ascii however, to preserve the contents as much as possible some of the non-ascii strings are left as is. This has been tested and won't have any effect on the results.

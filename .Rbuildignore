@@ -4,4 +4,5 @@
 ^README\.Rmd$
 ^images
 ^cran_comments.Rmd
+^cran_comments.md
 ^LICENSE\.md$
