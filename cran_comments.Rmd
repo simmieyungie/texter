@@ -1,0 +1,23 @@
+---
+title: "cran-comments"
+author: "Simi Adeboye"
+date: "8/15/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+## R CMD check results
+0 errors | 2 warnings | 2 notes
+
+#### checking package dependencies ... NOTE
+* Depends: includes the non-default packages:
+    'dplyr', 'plyr', 'ggplot2', 'magrittr', 'stringr', 'tidytext',
+    'purrr', 'stopwords', 'textdata'
+* Adding so many packages to the search path is excessive and importing
+  selectively is preferable.
+
+#### checking top-level files ... NOTE
+* Non-standard file/directory found at top level:
+    'images'

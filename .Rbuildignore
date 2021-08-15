@@ -2,3 +2,6 @@
 ^\.Rproj\.user$
 ^\.httr-oauth$
 ^README\.Rmd$
+^images
+^cran_comments.Rmd
+^LICENSE\.md$

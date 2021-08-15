@@ -21,7 +21,7 @@
 #' @importFrom magrittr %>%
 #' @importFrom ggplot2 geom_col labs facet_wrap ggplot aes
 #' @importFrom stopwords stopwords
-
+#' @importFrom stats reorder
 
 top_Sentiments <- function(word_vec, plot){
 

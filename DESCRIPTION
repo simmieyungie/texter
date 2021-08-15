@@ -10,8 +10,7 @@ Authors@R:
 Description: texter is designed to make quick text analysis possible and also helps
              with text cleaning, sentiment analysis. 
              The goal is to make text analysis faster and more accessibel for quick insights.
-License: `use_mit_license()`, `use_gpl3_license()` or friends to
-    pick a license
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
@@ -37,8 +36,7 @@ Depends:
     tidytext,
     purrr,
     stopwords,
-    textdata,
-    tidytext
+    textdata
 Suggests: 
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
