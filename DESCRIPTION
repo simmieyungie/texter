@@ -7,9 +7,7 @@ Authors@R:
            role = c("aut", "cre"),
            email = "kafarusimileoluwa@gmail.com")
 Maintainer: Simi Kafaru <kafarusimileoluwa@gmail.com>
-Description: This package,texter, is designed to make quick text analysis possible and also helps
-             with text cleaning, sentiment analysis. 
-             The goal is to make text analysis faster and more accessibel for quick insights.
+Description: The goal of "texter" is to faciliate quick text analysis.
 License: MIT + file LICENSE
 URL: https://github.com/simmieyungie/texter
 BugReports: https://github.com/simmieyungie/texter/issues
