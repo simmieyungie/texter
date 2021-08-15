@@ -12,7 +12,7 @@
 #'
 #' @examples
 #'
-#' sentimentAnalyzer(doge$text, details = T)
+#' sentimentAnalyzer(doge$text, details = TRUE)
 #'
 #' @importFrom dplyr rename mutate slice distinct count anti_join top_n inner_join row_number group_by ungroup slice
 #' @importFrom tidytext unnest_tokens
@@ -33,7 +33,7 @@ sentimentAnalyzer <- function(word_vec, details){
                 as.data.frame() %>%
                 rename(word = "."))
 
-  if (details == F){
+  if (details == FALSE){
     tabinfo %>%
       inner_join(textdata::lexicon_bing()) %>%
       count(word, sentiment, sort = T) %>%
@@ -45,8 +45,8 @@ sentimentAnalyzer <- function(word_vec, details){
   } else {
     tabinfo %>%
       inner_join(textdata::lexicon_nrc()) %>%
-      count(word, sentiment, sort = T) %>%
-      distinct(word, .keep_all = T) %>%
+      count(word, sentiment, sort = TRUE) %>%
+      distinct(word, .keep_all = TRUE) %>%
       ungroup() %>%
       group_by(sentiment) %>%
       summarise(n = sum(n))

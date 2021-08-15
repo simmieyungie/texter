@@ -19,15 +19,15 @@
 #' @examples
 #'
 #' {
-#' top_words(df$content, word_ret = "brexit", remove_these = c("news","uk"), size = 10)
+#' top_words_Retriever(brexit$content, word_ret = "brexit", remove_these = c("news","uk"), size = 10)
 #' }
 #'
-#' @importFrom dplyr rename mutate count anti_join top_n
+#' @importFrom dplyr rename mutate count anti_join top_n arrange slice filter select
 #' @importFrom tidytext unnest_tokens
 #' @importFrom stringr str_remove_all
 #' @importFrom magrittr %>%
 #' @importFrom stopwords stopwords
-
+#' @importFrom plyr rbind.fill
 
 
 top_words_Retriever <- function(word_vec, word_ret, remove_these, size){

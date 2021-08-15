@@ -16,6 +16,6 @@ This function will help you extract the weight of emotions conveyed in a tweet
 }
 \examples{
 
-sentimentAnalyzer(doge$text, details = T)
+sentimentAnalyzer(doge$text, details = TRUE)
 
 }

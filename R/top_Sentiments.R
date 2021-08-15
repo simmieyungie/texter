@@ -13,7 +13,7 @@
 #' @export
 #'
 #' @examples
-#' Top_Sentiments(doge$text, plot = T)
+#' top_Sentiments(doge$text, plot = TRUE)
 #'
 #' @importFrom dplyr rename mutate slice filter slice_max count anti_join top_n inner_join row_number group_by ungroup slice
 #' @importFrom tidytext unnest_tokens get_sentiments

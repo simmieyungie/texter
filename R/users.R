@@ -2,9 +2,11 @@
 
 #' Extract Usernames and tagged handles from tweets
 #'
-#' @description The function will any tagged handles from text
+#' @description The function will extract any tagged handles from text
 #'
 #' @param x This is the corpus you want to extract the mentions from
+#'
+#' @param ... More inputs
 #'
 #' @export
 #'

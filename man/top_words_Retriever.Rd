@@ -23,7 +23,7 @@ around a certain keyword
 \examples{
 
 {
-top_words(df$content, word_ret = "brexit", remove_these = c("news","uk"), size = 10)
+top_words_Retriever(brexit$content, word_ret = "brexit", remove_these = c("news","uk"), size = 10)
 }
 
 }
