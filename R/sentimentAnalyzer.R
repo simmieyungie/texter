@@ -16,7 +16,7 @@
 #'
 #' @importFrom dplyr rename mutate slice distinct count anti_join top_n inner_join row_number group_by ungroup slice
 #' @importFrom tidytext unnest_tokens
-#' @importFrom textdata lexicon_nrc lexicon_bing
+#' @importFrom textdata lexicon_bing
 #' @importFrom magrittr %>%
 #' @importFrom stopwords stopwords
 
@@ -44,7 +44,7 @@ sentimentAnalyzer <- function(word_vec, details){
 
   } else {
     tabinfo %>%
-      inner_join(lexicon_nrc()) %>%
+      inner_join(nrc) %>%
       count(word, sentiment, sort = TRUE) %>%
       distinct(word, .keep_all = TRUE) %>%
       ungroup() %>%

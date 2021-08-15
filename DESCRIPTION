@@ -1,42 +1,34 @@
 Package: texter
-Title: An easy text and sentiment analysis library
-Version: 0.0.0.9000
+Title: An Easy Text and Sentiment Analysis Library
+Version: 0.0.0.9
 Authors@R: 
     person(given = "Simi",
            family = "Kafaru",
            role = c("aut", "cre"),
-           email = "kafarusimileoluwa@gmail.com",
-           comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: texter is designed to make quick text analysis possible and also helps
+           email = "kafarusimileoluwa@gmail.com")
+Maintainer: Simi Kafaru <kafarusimileoluwa@gmail.com>
+Description: This package,texter, is designed to make quick text analysis possible and also helps
              with text cleaning, sentiment analysis. 
              The goal is to make text analysis faster and more accessibel for quick insights.
 License: MIT + file LICENSE
+URL: https://github.com/simmieyungie/texter
+BugReports: https://github.com/simmieyungie/texter/issues
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
-imports:
+Imports:
     dplyr,
     plyr,
     ggplot2,
     magrittr,
     stringr,
-    tidytext,
     purrr,
     stopwords,
     textdata,
     tidytext
 Depends:
-    R (>= 2.14),
-    dplyr,
-    plyr,
-    ggplot2,
-    magrittr,
-    stringr,
-    tidytext,
-    purrr,
-    stopwords,
-    textdata
+    R (>= 2.14)
 Suggests: 
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
