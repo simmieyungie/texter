@@ -35,7 +35,7 @@ top_Sentiments <- function(word_vec, plot){
       mutate(text = removeNumPunct(text)) %>%
       # mutate(text = str_remove_all(text, paste(remove_these, collapse = "|"))) %>%
       unnest_tokens(word, text) %>%
-      anti_join(stopwords::stopwords() %>%
+      anti_join(stopwords() %>%
                   as.data.frame() %>%
                   rename(word = ".")) %>%
       inner_join(get_sentiments("bing")) %>%
@@ -45,7 +45,7 @@ top_Sentiments <- function(word_vec, plot){
       group_by(sentiment) %>%
       slice_max(order_by = n, n = 10) %>%
       mutate(word = reorder(word, n)) %>%
-      ggplot2::ggplot(aes(n, word, fill = sentiment)) +
+      ggplot(aes(n, word, fill = sentiment)) +
       geom_col(show.legend = FALSE) +
       facet_wrap(~sentiment, scales = "free_y") +
       labs(x = "Contribution to sentiment",
@@ -61,7 +61,7 @@ top_Sentiments <- function(word_vec, plot){
       mutate(text = removeNumPunct(text)) %>%
       # mutate(text = str_remove_all(text, paste(remove_these, collapse = "|"))) %>%
       unnest_tokens(word, text) %>%
-      anti_join(stopwords::stopwords() %>%
+      anti_join(stopwords() %>%
                   as.data.frame() %>%
                   rename(word = ".")) %>%
       inner_join(get_sentiments("bing")) %>%

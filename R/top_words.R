@@ -45,7 +45,7 @@ top_words <- function(word_vec, remove_these, size){
       mutate(text = removeNumPunct(text)) %>%
       # mutate(text = str_remove_all(text, paste(remove_these, collapse = "|"))) %>%
       unnest_tokens(word, text) %>%
-      anti_join(stopwords::stopwords() %>%
+      anti_join(stopwords() %>%
                   as.data.frame() %>%
                   rename(word = ".")) %>%
       count(word, sort = T)
@@ -58,7 +58,7 @@ top_words <- function(word_vec, remove_these, size){
       mutate(text = removeNumPunct(text)) %>%
       mutate(text = str_remove_all(text, paste(remove_these, collapse = "|"))) %>%
       unnest_tokens(word, text) %>%
-      anti_join(stopwords::stopwords() %>%
+      anti_join(stopwords() %>%
                   as.data.frame() %>%
                   rename(word = ".")) %>%
       count(word, sort = T)

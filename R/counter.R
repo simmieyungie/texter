@@ -28,7 +28,7 @@ counter <- function(word_vec, words){
         mutate(text = tolower(text)) %>%
         mutate(text = removeURL(text)) %>%
         mutate(text = removeNumPunct(text)) %>%
-        mutate(word_occur =stringr::str_count(text, x)) %>%
+        mutate(word_occur = str_count(text, x)) %>%
         summarise(n = sum(word_occur )) %>%
         mutate(key = x) %>%
         dplyr::select(key, n)

@@ -40,7 +40,7 @@ top_words_Retriever <- function(word_vec, word_ret, remove_these, size){
         rename(text = ".")
 
       #Get the top words for the search word
-      word_counts <- plyr::rbind.fill(lapply(word_ret, function(x){
+      word_counts <- rbind.fill(lapply(word_ret, function(x){
         df %>%
           mutate(exist = grepl(word_ret, text, ignore.case = T)) %>%
           filter(exist == TRUE) %>%
@@ -49,7 +49,7 @@ top_words_Retriever <- function(word_vec, word_ret, remove_these, size){
           mutate(text = removeNumPunct(text)) %>%
           # mutate(text = str_remove_all(text, paste(remove_these, collapse = "|"))) %>%
           unnest_tokens(word, text) %>%
-          anti_join(stopwords::stopwords() %>%
+          anti_join(stopwords() %>%
                       as.data.frame() %>%
                       rename(word = ".")) %>%
           count(word, sort = T)
@@ -60,7 +60,7 @@ top_words_Retriever <- function(word_vec, word_ret, remove_these, size){
         rename(text = ".")
 
 
-      word_counts <- plyr::rbind.fill(lapply(word_ret, function(x){
+      word_counts <- rbind.fill(lapply(word_ret, function(x){
         df %>%
           mutate(exist = grepl(word_ret, text, ignore.case = T)) %>%
           filter(exist == TRUE) %>%
@@ -69,7 +69,7 @@ top_words_Retriever <- function(word_vec, word_ret, remove_these, size){
           mutate(text = removeNumPunct(text)) %>%
           mutate(text = str_remove_all(text, paste(remove_these, collapse = "|"))) %>%
           unnest_tokens(word, text) %>%
-          anti_join(stopwords::stopwords() %>%
+          anti_join(stopwords() %>%
                       as.data.frame() %>%
                       rename(word = ".")) %>%
           count(word, sort = T) %>%

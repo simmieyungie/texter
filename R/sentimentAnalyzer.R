@@ -29,13 +29,13 @@ sentimentAnalyzer <- function(word_vec, details){
     mutate(text = removeNumPunct(text)) %>%
     # mutate(text = str_remove_all(text, paste(remove_these, collapse = "|"))) %>%
     unnest_tokens(word, text) %>%
-    anti_join(stopwords::stopwords() %>%
+    anti_join(stopwords() %>%
                 as.data.frame() %>%
                 rename(word = "."))
 
   if (details == FALSE){
     tabinfo %>%
-      inner_join(textdata::lexicon_bing()) %>%
+      inner_join(lexicon_bing()) %>%
       count(word, sentiment, sort = T) %>%
       distinct(word, .keep_all = T) %>%
       ungroup() %>%
@@ -44,7 +44,7 @@ sentimentAnalyzer <- function(word_vec, details){
 
   } else {
     tabinfo %>%
-      inner_join(textdata::lexicon_nrc()) %>%
+      inner_join(lexicon_nrc()) %>%
       count(word, sentiment, sort = TRUE) %>%
       distinct(word, .keep_all = TRUE) %>%
       ungroup() %>%
