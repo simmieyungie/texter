@@ -7,7 +7,7 @@ Authors@R:
            role = c("aut", "cre"),
            email = "kafarusimileoluwa@gmail.com")
 Maintainer: Simi Kafaru <kafarusimileoluwa@gmail.com>
-Description: Implement text and sentiment analysis with quick exploration functions using 'texter'.
+Description: Implement text and sentiment analysis with 'texter', equipped with quick textual data exploration.
 License: MIT + file LICENSE
 URL: https://github.com/simmieyungie/texter
 BugReports: https://github.com/simmieyungie/texter/issues
