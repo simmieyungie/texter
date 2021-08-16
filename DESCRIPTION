@@ -9,7 +9,7 @@ Authors@R:
 Maintainer: Simi Kafaru <kafarusimileoluwa@gmail.com>
 Description: Implement text and sentiment analysis with 'texter'. 
              Generate sentiment scores on text data and also visualize sentiments.
-             'texter' allows you quickly generate insights on your data.
+             'texter' allows you to quickly generate insights on your data.
              It includes support for lexicons such as 'NRC' and 'Bing'.
 License: MIT + file LICENSE
 URL: https://github.com/simmieyungie/texter
