@@ -13,6 +13,9 @@ top_words(word_vec, remove_these, size)
 
 \item{size}{This is the Top N number of rows to be retrieved as an integer value}
 }
+\value{
+a data frame object.
+}
 \description{
 This function is used to get the top N words from a corpus. It will retrieve the most occurring words based on frequency
 }

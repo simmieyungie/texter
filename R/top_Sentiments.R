@@ -10,6 +10,7 @@
 #'
 #' @param plot (TRUE/FALSE) TRUE means you want to return a plot which you can further customize. FALSE means a dataframe will be returned
 #'
+#' @returns a data frame object if plot is FALSE. a ggplot object if plot = TRUE
 #' @export
 #'
 #' @examples

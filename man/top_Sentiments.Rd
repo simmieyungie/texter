@@ -11,6 +11,9 @@ top_Sentiments(word_vec, plot)
 
 \item{plot}{(TRUE/FALSE) TRUE means you want to return a plot which you can further customize. FALSE means a dataframe will be returned}
 }
+\value{
+a data frame object if plot is FALSE. a ggplot object if plot = TRUE
+}
 \description{
 This function returns the top 10 positive and negative words expressed in a text.
 By defaults a data frame of words classified as positive or negative based on weights.

@@ -95,18 +95,12 @@ top_Sentiments(word_vec = doge$text, plot = T) #You can further customize your p
 
 
 
-<!-- ### top_words_retriever -->
-<!-- Retrieve the top n words occurring in a rows of data containing a certain word -->
-<!-- ```{r} -->
-<!-- library(tidyverse) -->
-<!-- library(tidytext) -->
+### top_words_retriever
+Retrieve the top n words occurring in a rows of data containing a certain word
+```{r}
 
-<!-- brexit <- read.csv("C:\\Users\\User\\Documents\\Texter\\brexitnews.csv") -->
-
+top_words_Retriever(word_vec = brexit$content, word_ret = "brexit",
+                    remove_these = c("eu", "rt"), size = 10)
 
 
-<!-- top_words_Retriever(word_vec = brexit$content, word_ret = "bitcoin",  -->
-<!--                     remove_these = c("bitcoin", "rt"), size = 10) -->
-
-
-<!-- ``` -->
+```

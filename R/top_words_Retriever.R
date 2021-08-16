@@ -14,6 +14,7 @@
 #'
 #' @param size is the N number of rows to be retrieved as an integer value
 #'
+#' @return a data frame object.
 #' @export
 #'
 #' @examples
@@ -83,7 +84,7 @@ top_words_Retriever <- function(word_vec, word_ret, remove_these, size){
     } else {
       word_counts %>%
         arrange(desc(n)) %>%
-        slice(1:10)
+        slice(1:size)
     }
   }
 }

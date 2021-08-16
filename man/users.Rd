@@ -11,6 +11,9 @@ users(x, ...)
 
 \item{...}{More inputs}
 }
+\value{
+a character vector.
+}
 \description{
 The function will extract any tagged handles from text
 }

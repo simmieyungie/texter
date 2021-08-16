@@ -8,6 +8,7 @@
 #'
 #' @param ... More inputs
 #'
+#' @return a character vector.
 #' @export
 #'
 #' @examples

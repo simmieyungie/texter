@@ -9,6 +9,9 @@ removeNumPunct(x)
 \arguments{
 \item{x}{is the text column you want the punctuation and texts removed from}
 }
+\value{
+a character vector.
+}
 \description{
 This function will help you remove punctuation and numbers from your text easily
 }

@@ -7,7 +7,7 @@ Authors@R:
            role = c("aut", "cre"),
            email = "kafarusimileoluwa@gmail.com")
 Maintainer: Simi Kafaru <kafarusimileoluwa@gmail.com>
-Description: The goal of "texter" is to faciliate quick text analysis.
+Description: Implement text and sentiment analysis with quick exploration functions using 'texter'.
 License: MIT + file LICENSE
 URL: https://github.com/simmieyungie/texter
 BugReports: https://github.com/simmieyungie/texter/issues

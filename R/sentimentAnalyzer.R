@@ -7,7 +7,7 @@
 #' @param word_vec This is the corpus you want to extract the sentiments from
 #'
 #' @param details (A TRUE/FALSE value): If TRUE you get a more robust distribution of these emotions. FALSE is summarised as Positive or Negative
-#'
+#' @return a data frame object. A data frame of each emotions and their corresponding weight in text
 #' @export
 #'
 #' @examples

@@ -11,6 +11,9 @@ sentimentAnalyzer(word_vec, details)
 
 \item{details}{(A TRUE/FALSE value): If TRUE you get a more robust distribution of these emotions. FALSE is summarised as Positive or Negative}
 }
+\value{
+a data frame object. A data frame of each emotions and their corresponding weight in text
+}
 \description{
 This function will help you extract the weight of emotions conveyed in a tweet
 }

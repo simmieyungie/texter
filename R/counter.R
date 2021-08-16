@@ -9,7 +9,7 @@
 #' @param word_vec This is the corpus you want to the word frequency extracted from
 #'
 #' @param words This is a vector of words you want to retrieve their frequency counts
-#'
+#' @return a data frame object. A data frame object of strings and their corresponding count
 #'
 #'
 #' @export

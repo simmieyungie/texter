@@ -11,6 +11,9 @@ counter(word_vec, words)
 
 \item{words}{This is a vector of words you want to retrieve their frequency counts}
 }
+\value{
+a data frame object. A data frame object of strings and their corresponding count
+}
 \description{
 This function retrieves the number of times each word in a corpus occurs.
 It returns a dataframe containing the word and the corresponding counts

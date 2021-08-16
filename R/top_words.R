@@ -11,7 +11,7 @@
 #'
 #' @param size This is the Top N number of rows to be retrieved as an integer value
 #'
-#'
+#' @return a data frame object.
 #'
 #' @export
 #'

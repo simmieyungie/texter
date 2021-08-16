@@ -15,6 +15,9 @@ top_words_Retriever(word_vec, word_ret, remove_these, size)
 
 \item{size}{is the N number of rows to be retrieved as an integer value}
 }
+\value{
+a data frame object.
+}
 \description{
 This function helps to search for the top n words but only based texts or rows
 containing a key word. It is particularly useful when you want to search the top n words revolving

@@ -9,6 +9,9 @@ removeURL(x)
 \arguments{
 \item{x}{is the text value you want to extract the texts from}
 }
+\value{
+a character vector.
+}
 \description{
 This function helps remove URLs from text, particularly designed for tweets
 }
