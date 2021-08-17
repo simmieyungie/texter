@@ -1,5 +1,7 @@
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
+[![](https://cranlogs.r-pkg.org/badges/texter)](https://cran.r-project.org/package=texter)
+
 # texter
 
 <!-- badges: start -->
