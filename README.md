@@ -13,16 +13,15 @@ professionals who need quick insights into their text data.
 ## Installation
 
 This now available on CRAN
-CRAN.
 <!-- You can install the released version of texter from [CRAN](https://CRAN.R-project.org) with: -->
 
 <!-- ``` r -->
 <!-- install.packages("texter") -->
 <!-- ``` -->
 
-install.packages("devtools")
-The development version from [GitHub](https://github.com/) can be
-installed with:
+    install.packages("devtools")
+The development version from [GitHub](https://github.com/) can be installed with:
+   
     #devtools::install_github("simmieyungie/texter")
     remotes::install_github("simmieyungie/texter@main")
     #remove.packages(texter)
