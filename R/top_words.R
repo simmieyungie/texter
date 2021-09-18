@@ -33,7 +33,7 @@ top_words <- function(word_vec, remove_these, size){
 
   #Test for data type of word_vec and convert
   if (class(word_vec) != "character"){
-    word_vec <- pull(data)
+    word_vec <- pull(word_vec)
   }
 
     if (missing(remove_these)){ #You could also use missing() to test whether or not the argument y was supplied:

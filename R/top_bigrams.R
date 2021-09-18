@@ -30,7 +30,7 @@
 top_bigrams <- function(word_vec, remove_these, bigram_size){
   #Test for data type of word_vec and convert
   if (class(word_vec) != "character"){
-    word_vec <- pull(data)
+    word_vec <- pull(word_vec)
   }
 
   #if remove_these missing

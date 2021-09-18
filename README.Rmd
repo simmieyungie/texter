@@ -104,3 +104,9 @@ top_words_Retriever(word_vec = brexit$content, word_ret = "brexit",
 
 
 ```
+
+### top_bigrams
+```{r}
+
+```
+

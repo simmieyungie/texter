@@ -27,7 +27,7 @@
 top_Sentiments <- function(word_vec, plot){
   #convert to char if not char
   if (class(word_vec) != "character"){
-    word_vec <- dplyr::pull(data)
+    word_vec <- dplyr::pull(word_vec)
   }
 
   if (plot == TRUE){
