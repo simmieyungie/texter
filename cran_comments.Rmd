@@ -9,6 +9,12 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+# Minor Release
+-- R CMD check results ---------------------------------------------------------------------------- texter 0.1.9 ----
+Duration: 2m 16.8s
+
+0 errors √ | 0 warnings √ | 0 notes √
+
 ## R CMD check results
 0 errors | 1 warnings | 1 notes
 
