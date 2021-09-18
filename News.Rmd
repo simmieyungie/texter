@@ -1,0 +1,20 @@
+---
+title: "News"
+author: "Simi Adeboye"
+date: "9/18/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## tidytext (development version)
+
+### tidytext 0.1.9
+- functions can now take in dataframe inputs
+- top_bigrams() function helps you retrieve top n bigrams
+
+
+### tidytext 0.0.9
+- initial release of tidytext
