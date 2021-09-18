@@ -106,7 +106,10 @@ top_words_Retriever(word_vec = brexit$content, word_ret = "brexit",
 ```
 
 ### top_bigrams
+Retrieve top n bigrans occuring in a corpus
 ```{r}
+
+top_bigrams(brexit %>% select(content), remove_these = c("tmsnrsegbfvh", "â"), bigram_size = 10)
 
 ```
 
