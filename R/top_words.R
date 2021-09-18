@@ -31,12 +31,12 @@
 #Version three of code
 top_words <- function(word_vec, remove_these, size){
 
-  #removeNumPunct <- function(x) gsub("[^[:alpha:][:space:]]*", "", x)
+  #Test for data type of word_vec and convert
+  if (class(word_vec) != "character"){
+    word_vec <- dplyr::pull(data)
+  }
 
-  #removeUR <- function(x) gsub("([[:alpha:]])(?=\\1)", "", x, perl = TRUE)
-
-
-  if (missing(remove_these)){ #You could also use missing() to test whether or not the argument y was supplied:
+    if (missing(remove_these)){ #You could also use missing() to test whether or not the argument y was supplied:
     word_counts <- word_vec %>%
       as.data.frame() %>%
       rename(text = ".") %>%

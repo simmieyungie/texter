@@ -17,6 +17,11 @@
 #' @importFrom magrittr %>%
 #' @importFrom stringr str_count
 counter <- function(word_vec, words){
+  #Test for data type of word_vec and convert
+  if (class(word_vec) != "character"){
+    word_vec <- dplyr::pull(data)
+  }
+
   if (missing(word_vec) || missing(words)){
     print("Error: You have not specified character set or words to return count")
   } else {
