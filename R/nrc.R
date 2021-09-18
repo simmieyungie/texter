@@ -2,6 +2,7 @@
 #' NRC word-emotion association lexicon
 #' @name nrc
 #' @docType data
+#'
 #' General purpose English sentiment/emotion lexicon. This lexicon labels words
 #' with six possible sentiments or emotions: "negative", "positive", "anger",
 #' "anticipation", "disgust", "fear", "joy", "sadness", "surprise", or "trust".

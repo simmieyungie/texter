@@ -1,6 +1,6 @@
 Package: texter
 Title: An Easy Text and Sentiment Analysis Library
-Version: 0.0.0.9
+Version: 0.1.9
 Authors@R: 
     person(given = "Simi",
            family = "Kafaru",
@@ -27,7 +27,8 @@ Imports:
     purrr,
     stopwords,
     textdata,
-    tidytext
+    tidytext,
+    tidyr
 Depends:
     R (>= 2.14)
 Suggests: 

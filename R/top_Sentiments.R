@@ -25,6 +25,10 @@
 #' @importFrom stats reorder
 
 top_Sentiments <- function(word_vec, plot){
+  #convert to char if not char
+  if (class(word_vec) != "character"){
+    word_vec <- dplyr::pull(word_vec)
+  }
 
   if (plot == TRUE){
     word_vec%>%

@@ -14,13 +14,18 @@
 #'
 #' sentimentAnalyzer(doge$text, details = TRUE)
 #'
-#' @importFrom dplyr rename mutate slice distinct count anti_join top_n inner_join row_number group_by ungroup slice
+#' @importFrom dplyr rename mutate slice distinct count anti_join top_n inner_join row_number group_by ungroup slice pull
 #' @importFrom tidytext unnest_tokens
 #' @importFrom textdata lexicon_bing
 #' @importFrom magrittr %>%
 #' @importFrom stopwords stopwords
 
 sentimentAnalyzer <- function(word_vec, details){
+  #Test for data type of word_vec and convert
+  if (class(word_vec) != "character"){
+    word_vec <- pull(word_vec)
+  }
+
   tabinfo <-  word_vec %>%
     as.data.frame() %>%
     rename(text = ".") %>%

@@ -32,6 +32,11 @@
 
 
 top_words_Retriever <- function(word_vec, word_ret, remove_these, size){
+  #Test for data type of word_vec and convert
+  if (class(word_vec) != "character"){
+    word_vec <- dplyr::pull(word_vec)
+  }
+
   if (missing(word_ret)){ #Test to ensure that the search word in included
     print("Input the words to be retrieved")
   } else {
