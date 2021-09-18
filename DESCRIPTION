@@ -27,7 +27,8 @@ Imports:
     purrr,
     stopwords,
     textdata,
-    tidytext
+    tidytext,
+    tidyr
 Depends:
     R (>= 2.14)
 Suggests: 

@@ -21,7 +21,7 @@
 #' top_words(brexit$content, remove_these = c("news","uk"), size = 10)
 #' }
 #'
-#' @importFrom dplyr rename mutate count anti_join top_n
+#' @importFrom dplyr rename mutate count anti_join top_n pull
 #' @importFrom tidytext unnest_tokens
 #' @importFrom stringr str_remove_all
 #' @importFrom magrittr %>%
@@ -33,7 +33,7 @@ top_words <- function(word_vec, remove_these, size){
 
   #Test for data type of word_vec and convert
   if (class(word_vec) != "character"){
-    word_vec <- dplyr::pull(data)
+    word_vec <- pull(data)
   }
 
     if (missing(remove_these)){ #You could also use missing() to test whether or not the argument y was supplied:

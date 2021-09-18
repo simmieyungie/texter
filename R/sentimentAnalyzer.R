@@ -23,7 +23,7 @@
 sentimentAnalyzer <- function(word_vec, details){
   #Test for data type of word_vec and convert
   if (class(word_vec) != "character"){
-    word_vec <- dplyr::pull(data)
+    word_vec <- pull(data)
   }
 
   tabinfo <-  word_vec %>%
