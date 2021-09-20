@@ -1,6 +1,10 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-
+[![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/texter)](https://cran.r-project.org/package=texter)
+[![CRAN_time_from_release](https://www.r-pkg.org/badges/ago/texter)](https://cran.r-project.org/package=texter)
+[![CRAN_latest_release_date](https://www.r-pkg.org/badges/last-release/texter)](https://cran.r-project.org/package=texter)
+[![metacran downloads](https://cranlogs.r-pkg.org/badges/texter)](https://cran.r-project.org/package=texter)
+[![metacran downloads](https://cranlogs.r-pkg.org/badges/grand-total/texter)](https://cran.r-project.org/package=texter)
 # texter
 
 <!-- badges: start -->
